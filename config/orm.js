@@ -21,12 +21,10 @@ function objToSql(ob) {
         var value = ob[key];
         // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
-            // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-            // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-            // e.g. {sleepy: true} => ["sleepy=true"]
+           
             arr.push(key + "=" + value);
         }
     }
@@ -47,9 +45,7 @@ var orm = {
         });
     },
     insertOne: function (table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table;
-
-        queryString += " (";
+        var queryString = "INSERT INTO " + table + " ("
         queryString += cols.toString();
         queryString += ") ";
         queryString += "VALUES (";
