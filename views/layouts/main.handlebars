@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<title>Eat-Duh-Burger!</title>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-		<script src="/assets/js/burger.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
-        <link rel="stylesheet" href="/public/assets/css/burger_style.css">
-	</head>
-	<body>
-        <img class="text-center" src="/img/hamburger.png" alt="burger picture">
-		{{{ body }}}
-	</body>
+    <meta charset="UTF-8">
+    <title>Eat-Duh-Burger!</title>
+    {{!-- jQuery Library CDN --}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    {{!-- Bootstrap CDN --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    {{!-- Bootstrap Script --}}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    {{!-- Javascript Link --}}
+    <script src="/assets/js/burger.js"></script>
+    {{!-- CSS Link --}}
+    <link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <img class="img-fluid" src="/assets/img/hamburger.png" alt="burger picture">
+                </div>
+            </div>
+        </div>
+        {{{ body }}}
+    </div>
+</body>
+
 </html>

@@ -1,28 +1,47 @@
-<h1>Eat-Duh-Burger!</h1>
+<div class="row">
+    <div class="col-12">
+        <h1 class="text-center my-3">Eat-Duh-Burger!</h1>
+    </div>
+</div>
 
-<ol>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ol>
+<div class="row my-4">
+    {{!-- Current Menu --}}
+    <div class="col-6">
+        <h2 class="text-center">Current Menu</h2>
+        <ol>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{/unless}}
+            {{/each}}
+        </ol>
+    </div>
+    {{!--  Order Placed --}}
+    <div class="col-6">
+        <h2 class="text-center">Order Placed</h2>
+        <ol>
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=false}}
+            {{/if}}
+            {{/each}}
+        </ol>
+    </div>
+</div>
 
-<ol>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ol>
+<div class="row">
+    <div class="col-12">
+        <h3>Make Your Own Burger (To Add in Menu)</h3>
+        <form class="create-form">
 
-<form class="create-form">
+            <div class="form-group">
+                <label for="burger">Burger Name:</label>
+                <input type="text" id="burger" name="name">
+                <p>Enter a burger you want to eat and Click the "Submit" button</p>
+            </div>
 
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="burger" name="name">
-    <p>Enter a burger you want to eat and Click the "Submit" button</p>
-  </div>
+            <button type="submit">Add Burger</button>
+        </form>
 
-  <button type="submit">Add Burger</button>
-</form>
+    </div>
+</div>
