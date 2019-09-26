@@ -25,11 +25,11 @@ $(function(){
         event.preventDefault();
         
         var newBurger = {
-            burger_name: $("#bg").val().trim(),
+            burger_name: $("#burger").val().trim(),
             devoured: devour()
         };
         
-        $.ajax("api/burgers/", {
+        $.ajax("/api/burgers", {
             type:"POST",
             data: newBurger
         }).then(
