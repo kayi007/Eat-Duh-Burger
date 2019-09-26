@@ -25,8 +25,8 @@ $(function(){
         event.preventDefault();
         
         var newBurger = {
-            burger_name: $("#burger").val().trim(),
-            devoured: devour()
+            name: $("#burger").val().trim(),
+            // devoured: devour()
         };
         
         $.ajax("/api/burgers", {
@@ -40,12 +40,12 @@ $(function(){
         );
     });
 
-    devour = function(){
-        if (document.burgerForm.burger_name.value == ''){
-            return 1;
-        }else{
-            return 0;
-        }
-    };
+    // devour = function(){
+    //     if (document.burgerForm.burger_name.value == ''){
+    //         return 1;
+    //     }else{
+    //         return 0;
+    //     }
+    // };
 
 });
