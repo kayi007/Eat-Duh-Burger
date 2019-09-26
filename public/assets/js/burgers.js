@@ -23,29 +23,25 @@ $(function(){
 
     $(".create-form").on("submit", function(event){
         event.preventDefault();
+        var userBurger = $("#burger").val().trim();
         
-        var newBurger = {
-            name: $("#burger").val().trim(),
-            // devoured: devour()
-        };
+        if(userBurger){
+            var newBurger = {
+                name: userBurger
+            };
+
+            $.ajax("/api/burgers", {
+                type:"POST",
+                data: newBurger
+            }).then(
+                function(){
+                    console.log("You made a new burger!");
+                    location.reload();
+                }
+            );
+        }else{
+            $("#error").text("Please Enter a Burger Name.");
+        }
         
-        $.ajax("/api/burgers", {
-            type:"POST",
-            data: newBurger
-        }).then(
-            function(){
-                console.log("You made a new burger!");
-                location.reload();
-            }
-        );
     });
-
-    // devour = function(){
-    //     if (document.burgerForm.burger_name.value == ''){
-    //         return 1;
-    //     }else{
-    //         return 0;
-    //     }
-    // };
-
 });
